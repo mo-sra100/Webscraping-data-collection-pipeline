@@ -249,7 +249,7 @@ class Scraper():
                         if not os.path.exists(self.new_path):
                             os.makedirs(self.new_path)
                         urllib.request.urlretrieve(image_link, f'{self.new_path}/{ebay_item_number}.jpg')
-                        # response = self.s3_client.upload_file(f'{self.new_path}/{ebay_item_number}.jpg', 'aicoreproject3bucket', f'{ebay_item_number}.jpg')
+                        response = self.s3_client.upload_file(f'{self.new_path}/{ebay_item_number}.jpg', 'aicoreproject3bucket', f'{ebay_item_number}.jpg')
                         time.sleep(1)
                         self.product_dictionary['Image URL(s)'].append(image_link)
                     except TimeoutException:
@@ -288,7 +288,7 @@ class Scraper():
     def upload_dictionary_to_cloud(self):
         """This function uploads the data.json file to the RDS database and the
         images to the S3 data lake bucket."""
-        # response = self.s3_client.upload_file(f'{self.new_path}/data.json', 'aicoreproject3bucket', 'data.json')
+        response = self.s3_client.upload_file(f'{self.new_path}/data.json', 'aicoreproject3bucket', 'data.json')
         data = self.product_dictionary
         df = pd.DataFrame.from_dict(data, orient='columns')
         print("The following data will be added to the database (if all the products are already in the database it will say 'Empty DataFrame'):")
