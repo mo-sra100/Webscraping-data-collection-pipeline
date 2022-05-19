@@ -51,7 +51,7 @@ class Scraper():
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=opts)
 
         self.url_list_index = 0
-        self.last_item = 3
+        self.last_item = 5
         self.product_dictionary = {'UID':[], 'UUID':[], 'Product name':[], 'Price':[], 'Product URL':[], 'Image URL(s)':[]}
         self.url_list = []
         self.product_duplicate_count = 0
