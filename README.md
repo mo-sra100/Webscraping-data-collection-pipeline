@@ -34,7 +34,16 @@ Milestone 8:
 
 GitHub secrets that contain my Docker Hub details were then added. This was done so that GitHub action will build the Docker image and push it to my Docker Hub account every time there is a new push to the main branch of the repository. Cronjobs were also added to the EC2 instance which pull the newest version of the web-scraper once a month (as my AWS EC2 instance has limited usage) from my Docker Hub account and run it.
 
-
+The images in order below represent:
+1. UML diagram
+2. Locally running web-scraper and resulting AWS RDS database
+3. Locally running web-scraper and resulting AWS S3 data lake
+4. EC2 running web-scraper and resulting AWS RDS database
+5. Targets monitored by Prometheus
+6. Graphs representing container states in both Prometheus and Grafana
+7. Pushing to Github and automated workflow run
+8. Workflow completion and resulting Docker Hub push
+9. Cronjob which instructs EC2 instance to run latest version of web-scraper on the 20th of every month at 00:45
 ![1-UML-diagram](https://user-images.githubusercontent.com/97900542/169419494-0c3ab631-505f-46c9-b69c-76db33c6ff7c.png)
 ![2-running-locally-RDS](https://user-images.githubusercontent.com/97900542/169419508-eacea046-b48e-45bf-9b85-41076e26e65d.png)
 ![3-running-locally-S3](https://user-images.githubusercontent.com/97900542/169419518-a7de32aa-9c29-41d1-b5bd-4a6d70f02788.png)
@@ -43,4 +52,4 @@ GitHub secrets that contain my Docker Hub details were then added. This was done
 ![6-PROMETHEUS-GRAFANA](https://user-images.githubusercontent.com/97900542/169419532-f834cbeb-5bd8-4734-83f4-5d89ccf93253.png)
 ![7-GIT-WORKFLOW](https://user-images.githubusercontent.com/97900542/169419533-74ba4012-96b2-4656-b7c1-cbd862a228b5.png)
 ![8-WORKFLOW-TO-DOCKERHUB](https://user-images.githubusercontent.com/97900542/169419534-64b2d617-8241-48a5-9003-c086d70c32f6.png)
-![9-CRONJOBS](https://user-images.githubusercontent.com/97900542/169419556-76dd02f7-0333-484a-823d-dc8996c4a7aa.png)
+![9-CRONJOBS](https://user-images.githubusercontent.com/97900542/169420652-6f0aaf3c-4a1e-4ffb-be08-e24be8507825.png)
