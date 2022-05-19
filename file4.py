@@ -42,9 +42,9 @@ class Scraper():
         software_names = [SoftwareName.CHROME.value]
         operating_systems = [OperatingSystem.WINDOWS.value, OperatingSystem.LINUX.value]   
         user_agent_rotator = UserAgent(software_names=software_names, operating_systems=operating_systems, limit=100)
-        # Get list of user agents.
+        # Get list of user agents:
         # user_agents = user_agent_rotator.get_user_agents()
-        # Get Random User Agent String.
+        # Get Random User Agent String:
         user_agent = user_agent_rotator.get_random_user_agent()
         opts.add_argument(f'--user-agent={user_agent}')
         opts.add_argument('--no-sandbox')
@@ -147,7 +147,7 @@ class Scraper():
         while self.url_list_index < self.last_item:
             time.sleep(0.5)
             if self.url_list_index == self.index_limit:
-                print("There are no more products left to scrape. The web scraper will stop.")
+                print("There are no more products left to scrape. The web scraper will stop scraping.")
                 break
 
             else:
