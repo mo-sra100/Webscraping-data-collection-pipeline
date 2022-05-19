@@ -33,3 +33,14 @@ A Prometheus container was then set up to monitor the scraper including hardware
 Milestone 8:
 
 GitHub secrets that contain my Docker Hub details were then added. This was done so that GitHub action will build the Docker image and push it to my Docker Hub account every time there is a new push to the main branch of the repository. Cronjobs were also added to the EC2 instance which pull the newest version of the web-scraper once a month (as my AWS EC2 instance has limited usage) from my Docker Hub account and run it.
+
+
+![1-UML-diagram](https://user-images.githubusercontent.com/97900542/169419494-0c3ab631-505f-46c9-b69c-76db33c6ff7c.png)
+![2-running-locally-RDS](https://user-images.githubusercontent.com/97900542/169419508-eacea046-b48e-45bf-9b85-41076e26e65d.png)
+![3-running-locally-S3](https://user-images.githubusercontent.com/97900542/169419518-a7de32aa-9c29-41d1-b5bd-4a6d70f02788.png)
+![4-running-EC2](https://user-images.githubusercontent.com/97900542/169419530-1d3caf38-e8f4-4dce-b2bd-65d5a1d606d4.png)
+![5-PROMETHEUS-targets](https://user-images.githubusercontent.com/97900542/169419531-20ea1a2f-b87f-46fb-9ba1-e721d41e7f5c.png)
+![6-PROMETHEUS-GRAFANA](https://user-images.githubusercontent.com/97900542/169419532-f834cbeb-5bd8-4734-83f4-5d89ccf93253.png)
+![7-GIT-WORKFLOW](https://user-images.githubusercontent.com/97900542/169419533-74ba4012-96b2-4656-b7c1-cbd862a228b5.png)
+![8-WORKFLOW-TO-DOCKERHUB](https://user-images.githubusercontent.com/97900542/169419534-64b2d617-8241-48a5-9003-c086d70c32f6.png)
+![9-CRONJOBS](https://user-images.githubusercontent.com/97900542/169419556-76dd02f7-0333-484a-823d-dc8996c4a7aa.png)
